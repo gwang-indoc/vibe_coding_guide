@@ -3,6 +3,7 @@
 > Sources: Julius Brussee, 2026-04-04
 > Raw: [2026-06-01-caveman-claude-code-token-compression-plugin](../../raw/ai-tools/2026-06-01-caveman-claude-code-token-compression-plugin.md)
 > Updated: 2026-06-01
+> Note: Use on familiar projects only; monitor output quality carefully.
 
 ## Overview
 
@@ -91,6 +92,10 @@ Real session comparison on same project:
 | Session total | ~$0.23 | $0.3025 |
 
 *Note: higher total cost in caveman-ON session reflects more activity (larger cache writes), not caveman overhead. Per-response output reduction was significant (354 input vs 696). Quality tradeoff warrants monitoring.
+
+## Usage Note
+
+Use caveman when you are already familiar with the project. Compressed output is harder to catch when wrong — monitor AI output quality carefully, especially on unfamiliar codebases.
 
 ## Key Insight
 
