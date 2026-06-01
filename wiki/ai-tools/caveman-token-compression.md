@@ -2,8 +2,23 @@
 
 > Sources: Julius Brussee, 2026-04-04
 > Raw: [2026-06-01-caveman-claude-code-token-compression-plugin](../../raw/ai-tools/2026-06-01-caveman-claude-code-token-compression-plugin.md)
-> Updated: 2026-06-01
-> Note: Use on familiar projects only; monitor output quality carefully.
+
+## ⚠️ When NOT to Use Caveman
+
+**Do not use caveman for any task that produces deliverable text output:**
+
+- Writing specs, PRDs, design docs, RFCs, ADRs
+- Generating README, wiki articles, or documentation
+- Drafting emails, Slack messages, or user-facing copy
+- Any output a human will read directly
+
+**Good fits:** debugging, code review, refactoring, Q&A, codebase exploration, explaining internal mechanics. Caveman excels at **exploring an unfamiliar codebase** — compressed Q&A costs far fewer tokens and the answers are still precise.
+
+**Bad fits:** document generation tasks. Caveman-speak leaks into the artifact. The output quality problem is invisible in the diff but obvious to the reader.
+
+> **Rule:** If the AI's words become the deliverable, disable caveman first (`normal mode`). If the AI's words are consumed only by you, caveman is fine.
+
+---
 
 ## Overview
 
