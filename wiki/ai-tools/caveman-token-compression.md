@@ -79,20 +79,6 @@ For single agent: `claude plugin marketplace add JuliusBrussee/caveman && claude
 | mixed-with-code.md | 888 | 560 | 36.9% |
 | **Average** | **898** | **481** | **46%** |
 
-## User Test Data (gwang, 2026-06-01)
-
-Real session comparison on same project:
-
-| | Caveman OFF | Caveman ON |
-|---|---|---|
-| Haiku cost | $0.1162 | $0.1778 |
-| Sonnet cost | $0.1100 | (part of $0.3025 total) |
-| Sonnet input tokens | 696 | 354 (−49%) |
-| Sonnet output tokens | 937 | 1.7k* |
-| Session total | ~$0.23 | $0.3025 |
-
-*Note: higher total cost in caveman-ON session reflects more activity (larger cache writes), not caveman overhead. Per-response output reduction was significant (354 input vs 696). Quality tradeoff warrants monitoring.
-
 ## Usage Note
 
 Use caveman when you are already familiar with the project. Compressed output is harder to catch when wrong — monitor AI output quality carefully, especially on unfamiliar codebases.

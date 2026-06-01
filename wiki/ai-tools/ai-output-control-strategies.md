@@ -6,64 +6,29 @@
 
 ## Overview
 
-Three strategies to cut AI verbosity: a persistent CLAUDE.md directive (project-wide), a skill file (behavior-encoded workflows), or an inline terse directive (per-session). All reduce token waste and improve signal quality.
+Two strategies to cut AI verbosity: install the caveman output style plugin (persistent, no config needed) or use an inline terse directive (per-session, zero setup). Both reduce token waste and improve signal quality.
 
-## Strategy 1: CLAUDE.md Directive
+## Strategy 1: Caveman Output Style Plugin
 
-Add to `CLAUDE.md` for project-wide effect every session:
+Install [caveman-output-style-claude-code](https://github.com/carlosduplar/caveman-output-style-claude-code) — complete skill-based output style system for Claude Code. Handles output compression via hooks and skill files automatically. No CLAUDE.md edits or custom skill files needed.
 
-```
-Be concise.
-No explanations.
-No summaries.
-Only output required artifacts.
-```
+Covers: compressed responses across all sessions, activatable modes, hook-based enforcement.
 
-AI skips preambles and prose — outputs only what was asked. Zero per-session cost. Best for general output style control.
+Use when: permanent output style control across all projects.
 
-**Example — Java project CLAUDE.md:**
+## Strategy 2: Terse Inline Directive
 
-```markdown
-# Coding Rules
+Tell AI to be brief inline: `"be brief"`, `"terse"`, `"one line"`, `"no explanation"`.
 
-Be concise.
+No setup. Works for one session only.
 
-No summaries.
-
-No explanations unless requested.
-
-Output code and tests only.
-
-For Java:
-- Use constructor injection
-- Use JUnit 5
-- Use AssertJ
-- Use @WebMvcTest for controller tests
-- Follow TDD
-```
-
-Combines output style control with project-specific coding standards in one place. AI produces code + tests, no prose, and follows the stack rules every session.
-
-## Strategy 2: Skill File
-
-Encode HOW the AI should work in a skill file. More powerful than a terse directive: shapes behavior across many scenarios (commit messages, review style, wiki ingest), not just output length. Activatable on demand.
-
-Use when: you have a repeatable workflow worth encoding once and reusing many times.
-
-## Strategy 3: Terse Inline Directive
-
-Tell the AI to be brief inline: `"be brief"`, `"terse"`, `"one line"`, `"no explanation"`.
-
-No file to maintain. Zero setup. Works for one session.
-
-Use when: you want brevity for one conversation, not permanent behavior change.
+Use when: one-off brevity without installing anything.
 
 ## Comparison
 
-| Strategy | Scope | Setup effort | Best for |
+| Strategy | Scope | Setup | Best for |
 |---|---|---|---|
-| CLAUDE.md directive | Project-wide, every session | One-time file edit | General output style |
-| Skill file | Persistent, activatable | Moderate (write skill) | Repeatable workflows |
+| Caveman plugin | Persistent, all sessions | Install repo | Permanent output control |
 | Terse inline | Current session only | None | One-off brevity |
 
 ## See Also
