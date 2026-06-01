@@ -112,3 +112,7 @@ A March 2026 paper (arxiv 2604.00025) found brevity constraints on large models 
 | cavemem | Cross-agent memory compression |
 | cavekit | Spec-driven build loop |
 | cavegemma | Gemma 4 31B fine-tuned on caveman pairs |
+
+## See Also
+
+- [AI Output Control Strategies](ai-output-control-strategies.md) — CLAUDE.md directives, skill files, and terse inline as alternatives/complements to caveman
