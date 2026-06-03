@@ -95,38 +95,53 @@ Threshold signals: 100+ files, multiple modules, cross-file dependencies you don
 
 ## ⚠ Token Cost: Real Test Results (Important)
 
-Tested against [PilotDataPlatform/blueprint](https://github.com/PilotDataPlatform/blueprint) — a mid-to-large repo. Question: *"How does the drop pipeline state machine work?"*
+Tested against [PilotDataPlatform/blueprint](https://github.com/PilotDataPlatform/blueprint) — a mid-to-large Django/React repo. 10 questions spanning structural, relationship, flow-tracing, and text-search types.
 
-**With Graphify:**
-```
-Total cost:            $0.3136
-Total duration (API):  58s / wall: 2m 30s
-claude-haiku-4-5:   443 input, 14 output, 0 cache read, 0 cache write       ($0.0005)
-claude-sonnet-4-6:  378 input, 2.6k output, 512.3k cache read, 31.6k write  ($0.3131)
-```
+### Results
 
-**Without Graphify:**
-```
-Total cost:            $0.3177
-Total duration (API):  1m 17s / wall: 1m 28s
-claude-haiku-4-5:   504 input, 4.5k output, 993.7k cache read, 91.6k write  ($0.2370)
-claude-sonnet-4-6:  347 input, 893 output, 72.0k cache read, 11.9k write    ($0.0807)
-```
+| # | Question | Graphify | No Graphify | Delta |
+|---|----------|----------|-------------|-------|
+| 1 | Trace full stack: frontend API call → database | $0.289 | $0.245 | +18% |
+| 2 | Most central / most-depended-on modules | $0.092 | $0.252 | **−63%** |
+| 3 | How does multi-tenancy work? | $0.150 | $0.138 | +9% |
+| 4 | What files depend on the user auth model? | $0.104 | $0.229 | **−55%** |
+| 5 | What happens on backend when user logs in? | $0.132 | $0.133 | ≈0% |
+| 6 | Full data flow: user submits blueprint (complex) | $0.466 | $0.323 | +44% (quality worse) |
+| 7 | What does API return when user has no permissions? | $0.107 | $0.086 | +24% |
+| 8 | Are there any TODO comments about billing? | $0.060 | $0.050 | +21% |
+| 9 | Which endpoints are missing auth checks? | $0.520 | $0.387 | +34% |
+| 10 | What does function `apiFetch` return? | $0.112 | $0.090 | +24% |
 
-**Finding:** Virtually no cost difference ($0.3136 vs $0.3177).
+### Pattern
 
-Tested 4 questions total on the same repo — all yielded similar results:
+**Graphify wins on graph-native questions** — those answerable purely from structural edges:
+- Q2 (centrality ranking): 63% cheaper — graph directly encodes dependency counts
+- Q4 (reverse dependency lookup): 55% cheaper — graph inverts the edge index instantly
 
-| Question | Result |
+**Graphify loses or breaks even everywhere else:**
+- Semantic/body questions (Q7, Q10): graph can't read function logic, falls back to file reads anyway
+- Text search (Q8): grep is strictly faster and cheaper
+- Security audits (Q9): needs full body reads across many files — graph adds overhead without narrowing the read set
+- Complex cross-layer flows (Q6): Graphify was more expensive *and* produced a lower-quality answer than native agentic search
+
+### When to Use
+
+| Question type | Use Graphify? |
 |---|---|
-| "How does the drop pipeline state machine work?" | No significant difference (numbers above) |
-| "What RBAC checks happen before a route handler runs?" | Similar cost both ways |
-| "What's the relationship between Collection, Zone, and GCS?" | Similar cost both ways |
-| "How does session state get loaded?" | Similar cost both ways |
+| "What depends on X?" / reverse dependency | Yes — graph wins |
+| "What are the most central modules?" | Yes — graph wins |
+| "Trace flow across layers" (simple) | Neutral / slight loss |
+| "Trace flow across layers" (complex, 6+ hops) | No — quality degrades |
+| "What does function X return?" | No — grep + read is cheaper |
+| "Are there TODOs about X?" | No — grep wins |
+| Security audit / body-logic questions | No — needs full file reads |
 
-Graphify did not reduce tokens on this mid-size repo across any question type — structural, state machine, relationship, or auth flow. The benefit likely requires a truly huge repo where cross-file dependency mapping would otherwise cost many exploration round-trips.
+**Practical rule:** Use Graphify only for questions whose answer is *in the graph structure itself* — dependency counts, reverse lookups, centrality. For anything that requires reading function bodies, skip it.
 
-**Conclusion:** Graphify's ROI threshold is higher than expected. Reserve for repos where manual exploration cost is clearly prohibitive.
+**Caveats:**
+- Cold answer (no Graphify) reads actual files — may be more accurate for logic questions
+- Graph quality depends on indexing quality; stale graphs skew results
+- Token delta includes system prompt overhead — savings are proportionally smaller in long sessions
 
 ## See Also
 

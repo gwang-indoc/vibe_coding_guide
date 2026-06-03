@@ -11,4 +11,7 @@
 ## [2026-06-03] ingest | Graphify: Codebase Knowledge Graph Tool
 ## [2026-06-03] update | Graphify: added when-to-use guidance and real token cost test results (blueprint repo)
 ## [2026-06-03] update | Graphify: expanded test results — 4 question types all showed no significant token savings
+## [2026-06-03] update | Graphify: added Test 2 (5 cross-cutting flow questions) — ~4x savings ($0.33 vs $1.21); updated conclusion and verdict
 ## [2026-06-03] update | Graphify: added code graph vs Claude native agentic search (grep) trade-off section
+## [2026-06-03] update | Graphify: replaced test results with full 10-question benchmark — detailed cost table, pattern analysis, updated when-to-use table
+## [2026-06-03] ingest | Claude Code: Model Selection by Task — Haiku/Sonnet/Opus decision table by task type
