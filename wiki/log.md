@@ -15,3 +15,6 @@
 ## [2026-06-03] update | Graphify: added code graph vs Claude native agentic search (grep) trade-off section
 ## [2026-06-03] update | Graphify: replaced test results with full 10-question benchmark — detailed cost table, pattern analysis, updated when-to-use table
 ## [2026-06-03] ingest | Claude Code: Model Selection by Task — Haiku/Sonnet/Opus decision table by task type
+## [2026-06-03] ingest | CodeGraph: Codebase Knowledge Graph Tool
+- Updated: Graphify: Codebase Knowledge Graph Tool (added See Also cross-reference to CodeGraph)
+## [2026-06-03] update | CodeGraph: added independent test results (blueprint repo, 4 Qs) — CodeGraph wins only on full-stack trace (−37%), loses on body-logic and security audit (+22–52%)

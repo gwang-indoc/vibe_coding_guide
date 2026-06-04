@@ -145,4 +145,5 @@ Tested against [PilotDataPlatform/blueprint](https://github.com/PilotDataPlatfor
 
 ## See Also
 
+- [CodeGraph: Codebase Knowledge Graph Tool](codegraph-codebase-knowledge-graph.md) — alternative: TypeScript, MCP-native, pure static analysis (no LLM backend), SQLite storage, zero-config
 - [AI Output Control Strategies](ai-output-control-strategies.md)
