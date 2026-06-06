@@ -18,3 +18,5 @@
 ## [2026-06-03] ingest | CodeGraph: Codebase Knowledge Graph Tool
 - Updated: Graphify: Codebase Knowledge Graph Tool (added See Also cross-reference to CodeGraph)
 ## [2026-06-03] update | CodeGraph: added independent test results (blueprint repo, 4 Qs) — CodeGraph wins only on full-stack trace (−37%), loses on body-logic and security audit (+22–52%)
+
+## [2026-06-06] ingest | Claude Code: Context Management Strategy

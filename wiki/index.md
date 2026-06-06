@@ -11,4 +11,5 @@ Tools, plugins, and skills for AI coding agents.
 | [Claude Code: Model Selection by Task](ai-tools/claude-code-model-selection.md) | Haiku/Sonnet/Opus decision table by task type; default Sonnet, escalate to Opus only when Sonnet loops or misses root cause | 2026-06-03 |
 | [CodeGraph: Codebase Knowledge Graph Tool](ai-tools/codegraph-codebase-knowledge-graph.md) | TypeScript, MCP-native, pure AST (no LLM), SQLite, zero-config; vendor bench: 16% cheaper / 58% fewer tool calls (architecture Qs only); independent test on mid-size repo: adds cost except for full-stack trace — may benefit huge repos | 2026-06-03 |
 | [Graphify: Codebase Knowledge Graph Tool](ai-tools/graphify-codebase-knowledge-graph.md) | Python tool (58.8k stars) for codebase knowledge graphs; only worth using on huge repos — real test on mid-size repo showed no token savings vs no-Graphify ($0.31 vs $0.31) | 2026-06-03 |
+| [Claude Code: Context Management Strategy](ai-tools/claude-code-context-management.md) | Explore→plan→clear→execute pattern; disable auto-compact and compact manually at logical intervals (phase end, task switch, topic change) | 2026-06-06 |
 
