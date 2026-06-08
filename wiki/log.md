@@ -20,3 +20,11 @@
 ## [2026-06-03] update | CodeGraph: added independent test results (blueprint repo, 4 Qs) — CodeGraph wins only on full-stack trace (−37%), loses on body-logic and security audit (+22–52%)
 
 ## [2026-06-06] ingest | Claude Code: Context Management Strategy
+
+## [2026-06-06] ingest | Claude Code: Dynamic Context Injection
+- Updated: Claude Code: Context Management Strategy (added See Also)
+
+## [2026-06-06] ingest | ECC: Claude Code Plugin
+- Updated: Claude Code: Dynamic Context Injection (added ECC rules architecture, skills, token optimization)
+
+## [2026-06-08] ingest | Claude HUD: Statusline Plugin for Claude Code
