@@ -28,3 +28,24 @@
 - Updated: Claude Code: Dynamic Context Injection (added ECC rules architecture, skills, token optimization)
 
 ## [2026-06-08] ingest | Claude HUD: Statusline Plugin for Claude Code
+
+## [2026-06-10] ingest | Context Dumb Zone Thresholds
+- Updated: Claude Code: Context Management Strategy (added dumb zone thresholds section)
+
+## [2026-06-10] ingest | Rewind Over Correction
+- Updated: Claude Code: Context Management Strategy (added rewind section)
+
+## [2026-06-10] ingest | CLAUDE.md Line Limit
+- Updated: CLAUDE.md Behavioral Guidelines (added file size section)
+
+## [2026-06-10] ingest | CLAUDE.md Important Tags
+- Updated: CLAUDE.md Behavioral Guidelines (added conditional importance tags section)
+
+## [2026-06-15] ingest | Claude Code: Skill Context Forking & Per-Step Agent Isolation
+- Updated: Claude Code: Context Management Strategy
+- Updated: Claude Code: Dynamic Context Injection
+
+## [2026-06-15] ingest | Claude Code: Auto Mode + Parallel Sessions Workflow
+- Updated: Claude Code: Context Management Strategy
+
+## [2026-06-16] lint | 6 issues found, 2 auto-fixed

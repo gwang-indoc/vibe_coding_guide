@@ -1,11 +1,32 @@
 # CLAUDE.md Behavioral Guidelines
 
-> Sources: [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md)
-> Updated: 2026-06-03
+> Sources: [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md); User observation, 2026-06-10
+> Raw: [CLAUDE.md Line Limit](../../raw/ai-tools/2026-06-10-claude-md-line-limit.md); [CLAUDE.md Important Tags](../../raw/ai-tools/2026-06-10-claude-md-important-tags.md)
+> Updated: 2026-06-10
 
 ## Overview
 
 Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific CLAUDE.md as needed. Bias toward caution over speed — use judgment on trivial tasks.
+
+## File Size
+
+Target under **200 lines per file**. Split into multiple CLAUDE.md files (root + subdirectory) when approaching that limit rather than letting one file bloat.
+
+## Conditional Importance Tags
+
+As CLAUDE.md grows, Claude deprioritizes content further down the file. Wrap domain-specific rules in `<important if="...">` tags to prevent silent rule-skipping:
+
+```xml
+<important if="working with database migrations">
+Never run DROP TABLE without an explicit user confirmation step.
+</important>
+
+<important if="editing API endpoints">
+All responses must include the X-Request-ID header.
+</important>
+```
+
+The `if` condition scopes when the rule is active — Claude applies it only in matching contexts, and the tag signals the rule should not be ignored.
 
 ## 1. Think Before Coding
 
