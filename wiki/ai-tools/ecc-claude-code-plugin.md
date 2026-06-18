@@ -2,7 +2,7 @@
 
 > Sources: ECC (affaan-m), 2026-06-06
 > Raw: [ECC: Harness-Native Operator System](../../raw/ai-tools/2026-06-06-ecc-harness-native-operator-system.md)
-> Updated: 2026-06-06
+> Updated: 2026-06-18
 
 ## Overview
 
@@ -57,3 +57,5 @@ Security scanning: 1,282 tests, 102 rules. Covers secrets detection, permission 
 - [Claude Code: Dynamic Context Injection](claude-code-dynamic-context-injection.md)
 - [Claude Code: Context Management Strategy](claude-code-context-management.md)
 - [Claude HUD: Statusline Plugin for Claude Code](claude-hud-statusline-plugin.md)
+- [OWASP Security Skill for Claude Code](owasp-security-skill.md) — OWASP-focused complement to AgentShield
+- [Claude Security Audit (/security-audit)](claude-security-audit-command.md) — full OWASP-mapped audit command

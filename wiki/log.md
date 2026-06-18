@@ -49,3 +49,10 @@
 - Updated: Claude Code: Context Management Strategy
 
 ## [2026-06-16] lint | 6 issues found, 2 auto-fixed
+
+## [2026-06-18] ingest | OWASP Security Skill for Claude Code
+- Updated: ECC: Claude Code Plugin (added See Also cross-references to security tools)
+
+## [2026-06-18] ingest | Claude Security Audit (/security-audit)
+
+## [2026-06-18] lint | 1 issue found, 0 auto-fixed
