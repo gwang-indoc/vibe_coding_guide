@@ -1,5 +1,8 @@
 # Wiki Log
 
+## [2026-06-19] ingest | Claude Code: Context Management Strategy
+- Updated: Claude Code: Context Management Strategy (merged agent milestone compaction)
+
 ## [2026-06-01] ingest | Caveman Token Compression Plugin
 
 ## [2026-06-01] ingest | Java Coding Standards

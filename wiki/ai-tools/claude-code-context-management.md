@@ -1,8 +1,8 @@
 # Claude Code: Context Management Strategy
 
-> Sources: User observation, 2026-06-06; User observation, 2026-06-10
-> Raw: [Claude Code Context Management Strategy](../../raw/ai-tools/2026-06-06-claude-code-context-management-strategy.md); [Context Dumb Zone Thresholds](../../raw/ai-tools/2026-06-10-context-dumb-zone-thresholds.md); [Rewind Over Correction](../../raw/ai-tools/2026-06-10-rewind-over-correction.md)
-> Updated: 2026-06-10
+> Sources: User observation, 2026-06-06; User observation, 2026-06-10; User observation, 2026-06-19
+> Raw: [Claude Code Context Management Strategy](../../raw/ai-tools/2026-06-06-claude-code-context-management-strategy.md); [Context Dumb Zone Thresholds](../../raw/ai-tools/2026-06-10-context-dumb-zone-thresholds.md); [Rewind Over Correction](../../raw/ai-tools/2026-06-10-rewind-over-correction.md); [Agent Milestone Compaction](../../raw/ai-tools/2026-06-19-agent-milestone-compaction.md)
+> Updated: 2026-06-19
 
 ## Overview
 
@@ -52,6 +52,20 @@ Use `/compact`. Compact at phase boundaries, not mid-task:
 - Planning → Implementation: YES
 - Mid-implementation: NO
 - After failed approach: YES
+
+### Agent Milestone Compaction
+
+For multi-agent or long-running agent sessions, don't wait for the context limit — compact at named milestones:
+
+| Milestone | Action |
+|-----------|--------|
+| After repo exploration | `/compact` |
+| After implementation plan | `/compact` |
+| After major code changes | `/compact` |
+| After E2E test result | `/compact` |
+| Before handoff to another agent | `/compact` |
+
+**Threshold:** compact proactively when context usage hits **60–70%**. This overlaps with the "dumb zone" onset — acting early keeps agent quality high rather than recovering from degraded output.
 
 ## See Also
 
