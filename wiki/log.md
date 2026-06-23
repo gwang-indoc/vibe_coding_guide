@@ -1,5 +1,7 @@
 # Wiki Log
 
+## [2026-06-23] ingest | Claude Code: settings.json Permissions
+
 ## [2026-06-19] ingest | Claude Code: Context Management Strategy
 - Updated: Claude Code: Context Management Strategy (merged agent milestone compaction)
 
