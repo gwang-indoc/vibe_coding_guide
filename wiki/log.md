@@ -1,5 +1,7 @@
 # Wiki Log
 
+## [2026-06-23] ingest | Claude Code: Session Monitor (claude_output)
+
 ## [2026-06-23] ingest | Claude Code: settings.json Permissions
 
 ## [2026-06-19] ingest | Claude Code: Context Management Strategy
